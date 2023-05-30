@@ -43,5 +43,18 @@ Furthermore, adding a new information to the dataset and applying the Differenti
     >![](plots/decimal/DP+1.png)\
     >**The new bit is not identifiable**
 
+## PRNG vs TRNG
+> TRNG bits and implementation cannot be published, so it is not in the actual code
+
+||0|1|2|3|4|5|&|7|8|9|**avg**|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|NoDP|10000|10000|10000|10000|10000|10000|10000|10000|10000|10000|**10000**|
+|NoDP+1|10000|10001|10000|10000|10000|10000|10000|10000|10000|10000|**10000.1**|
+|DP_PRNG|10013|9986|9876|9969|10043|9961|10081|9936|10130|10006|**10000.1**|
+|DP+1_PRNG|10095|9917|9911|9934|10076|9991|10093|10109|9997|9879|**10000.2**|
+|DP_TRNG|10056|10059|10021|9992|9993|9898|9928|9988|10035|10030|**10000**|
+|DP+1_TRNG|9940|9954|9969|10019|10057|10100|10068|10097|9883|9913|**10000**|
+
+
 ## DP Algorithm
 ![](DP-algorithm-scheme.png)
